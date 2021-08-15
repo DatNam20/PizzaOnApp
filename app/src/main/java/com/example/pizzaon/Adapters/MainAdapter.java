@@ -38,11 +38,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.viewHolder holder, int position) {
 
-        final  MainModel model = itemList.get(position);
-        holder.imageItem.setImageResource(model.getEachItemImage());
-        holder.textName.setText(model.getEachItemName());
-        holder.textPrice.setText(model.getEachItemPrice());
-        holder.textDescription.setText(model.getEachItemDescription());
+        final  MainModel mainModel = itemList.get(position);
+        holder.imageItem.setImageResource(mainModel.getEachItemImage());
+        holder.textName.setText(mainModel.getEachItemName());
+        holder.textPrice.setText(mainModel.getEachItemPrice());
+        holder.textDescription.setText(mainModel.getEachItemDescription());
 
     }
 
