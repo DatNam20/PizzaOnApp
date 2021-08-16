@@ -16,33 +16,33 @@ import com.example.pizzaon.R;
 import java.util.ArrayList;
 
 
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewHolder> {
+public class MainAdapter extends RecyclerView.Adapter<MainAdapter.itemViewHolder> {
 
     ArrayList<MainModel> itemList;
-    Context context;
+    Context mainContext;
 
 
     public MainAdapter(ArrayList<MainModel> itemList, Context context) {
         this.itemList = itemList;
-        this.context = context;
+        this.mainContext = context;
     }
 
 
     @NonNull
     @Override
-    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_each_layout, parent, false);
-        return new viewHolder(view);
+    public itemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(mainContext).inflate(R.layout.item_each_layout, parent, false);
+        return new itemViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainAdapter.viewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull itemViewHolder holder, int position) {
 
         final  MainModel mainModel = itemList.get(position);
         holder.imageItem.setImageResource(mainModel.getEachItemImage());
-        holder.textName.setText(mainModel.getEachItemName());
-        holder.textPrice.setText(mainModel.getEachItemPrice());
-        holder.textDescription.setText(mainModel.getEachItemDescription());
+        holder.textItemName.setText(mainModel.getEachItemName());
+        holder.textItemPrice.setText(mainModel.getEachItemPrice());
+        holder.textItemDescription.setText(mainModel.getEachItemDescription());
 
     }
 
@@ -51,18 +51,19 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewHolder> {
         return itemList.size();
     }
 
-    public class viewHolder extends RecyclerView.ViewHolder {
+
+    public class itemViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageItem;
-        TextView textName, textPrice, textDescription;
+        TextView textItemName, textItemPrice, textItemDescription;
 
-        public viewHolder(@NonNull View itemView) {
+        public itemViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageItem = itemView.findViewById(R.id.image_eachItem);
-            textName = itemView.findViewById(R.id.text_name_eachItem);
-            textPrice = itemView.findViewById(R.id.text_price_eachItem);
-            textDescription = itemView.findViewById(R.id.text_description_eachItem);
+            textItemName = itemView.findViewById(R.id.text_name_eachItem);
+            textItemPrice = itemView.findViewById(R.id.text_price_eachItem);
+            textItemDescription = itemView.findViewById(R.id.text_description_eachItem);
 
         }
     }
