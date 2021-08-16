@@ -5,12 +5,14 @@ public class MainModel {
     int eachItemImage;
     String eachItemName, eachItemPrice, eachItemDescription;
 
+
     public MainModel(int eachItemImage, String eachItemName, String eachItemPrice, String eachItemDescription) {
         this.eachItemImage = eachItemImage;
         this.eachItemName = eachItemName;
         this.eachItemPrice = eachItemPrice;
         this.eachItemDescription = eachItemDescription;
     }
+
 
     public int getEachItemImage() {
         return eachItemImage;
