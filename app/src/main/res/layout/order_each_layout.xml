@@ -4,20 +4,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="12dp" >
+    android:layout_height="100dp"
+    android:layout_marginTop="11dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="10dp" >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="15dp" >
+        app:cardCornerRadius="5dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/colorTranslucentMain">
 
             <ImageView
                 android:layout_width="140dp"
@@ -36,9 +37,9 @@
                     android:id="@+id/text_name_eachOrder"
                     android:text="NAME"
                     android:textStyle="bold"
-                    android:textSize="17dp"
-                    android:textColor="@color/colorText"
-                    android:layout_marginTop="15dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/colorLightTurquoise"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"/>
 
                 <LinearLayout
@@ -51,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:text="₹"
                         android:textStyle="bold"
-                        android:textColor="@color/colorHighlightGreen"
+                        android:textColor="@color/colorPaleRed"
                         android:layout_marginLeft="10dp"
                         android:textSize="13dp"/>
 
@@ -61,7 +62,7 @@
                         android:id="@+id/text_price_eachOrder"
                         android:text="Price"
                         android:textStyle="bold"
-                        android:textColor="@color/colorHighlightGreen"
+                        android:textColor="@color/colorPaleRed"
                         android:layout_marginLeft="5dp"
                         android:textSize="13dp"/>
 
