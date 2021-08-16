@@ -16,11 +16,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:background="@color/colorMain">
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
                 android:id="@+id/image_eachItem"
                 android:scaleType="centerCrop"/>
@@ -36,7 +35,7 @@
                     android:id="@+id/text_name_eachItem"
                     android:text="NAME"
                     android:textStyle="bold"
-                    android:textSize="23dp"
+                    android:textSize="17dp"
                     android:textColor="@color/colorText"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="10dp"/>
@@ -53,7 +52,7 @@
                         android:textStyle="bold"
                         android:textColor="@color/colorHighlightGreen"
                         android:layout_marginLeft="10dp"
-                        android:textSize="18dp"/>
+                        android:textSize="13dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -63,7 +62,7 @@
                         android:textStyle="bold"
                         android:textColor="@color/colorHighlightGreen"
                         android:layout_marginLeft="5dp"
-                        android:textSize="18dp"/>
+                        android:textSize="13dp"/>
 
                 </LinearLayout>
 
@@ -74,7 +73,7 @@
                     android:text="Description"
                     android:textColor="@color/colorGrey"
                     android:layout_marginLeft="10dp"
-                    android:textSize="18dp" />
+                    android:textSize="10dp" />
 
             </LinearLayout>
 
