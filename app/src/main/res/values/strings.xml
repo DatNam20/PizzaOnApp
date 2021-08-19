@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">PizzaOn</string>
+
+
+    <string name="string_foodName">NAME</string>
+    <string name="string_foodPrice">PRICE</string>
+    <string name="string_rupeeSymbol">₹</string>
+    <string name="string_foodQuantity">QUANTITY</string>
+    <string name="string_defaultQuantity">1</string>
+    <string name="string_foodDescription">DESCRIPTION</string>
+    <string name="string_orderID">OrderID</string>
+
+
+    <string name="string_nameHint">Name</string>
+    <string name="string_numberHint">Phone Number</string>
+    <string name="string_orderSelected">Order Now</string>
+
+
 </resources>
