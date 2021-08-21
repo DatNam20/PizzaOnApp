@@ -6,7 +6,9 @@
     android:layout_height="140dp"
     android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="12dp">
+    android:layout_marginRight="12dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="12dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -33,12 +35,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/text_name_eachItem"
-                    android:text="NAME"
+                    android:text="@string/string_foodName"
                     android:textStyle="bold"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:textColor="@color/colorPaleRed"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -48,21 +51,23 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="₹"
+                        android:text="@string/string_rupeeSymbol"
                         android:textStyle="bold"
                         android:textColor="@color/colorHighlightGreen"
                         android:layout_marginLeft="10dp"
-                        android:textSize="13dp"/>
+                        android:textSize="13sp"
+                        android:layout_marginStart="10dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/text_price_eachItem"
-                        android:text="Price"
+                        android:text="@string/string_foodPrice"
                         android:textStyle="bold"
                         android:textColor="@color/colorHighlightGreen"
                         android:layout_marginLeft="5dp"
-                        android:textSize="13dp"/>
+                        android:textSize="13sp"
+                        android:layout_marginStart="5dp" />
 
                 </LinearLayout>
 
@@ -70,10 +75,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/text_description_eachItem"
-                    android:text="Description"
+                    android:text="@string/string_foodDescription"
                     android:textColor="@color/colorGrey"
                     android:layout_marginLeft="10dp"
-                    android:textSize="10dp" />
+                    android:textSize="10sp"
+                    android:layout_marginStart="10dp" />
 
             </LinearLayout>
 

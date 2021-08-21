@@ -7,7 +7,9 @@
     android:layout_height="100dp"
     android:layout_marginTop="11dp"
     android:layout_marginLeft="8dp"
-    android:layout_marginRight="10dp" >
+    android:layout_marginRight="10dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -35,12 +37,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/text_name_eachOrder"
-                    android:text="NAME"
+                    android:text="@string/string_foodName"
                     android:textStyle="bold"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:textColor="@color/colorLightTurquoise"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -50,21 +53,23 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="₹"
+                        android:text="@string/string_rupeeSymbol"
                         android:textStyle="bold"
                         android:textColor="@color/colorPaleRed"
                         android:layout_marginLeft="10dp"
-                        android:textSize="13dp"/>
+                        android:textSize="13sp"
+                        android:layout_marginStart="10dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/text_price_eachOrder"
-                        android:text="PRICE"
+                        android:text="@string/string_foodPrice"
                         android:textStyle="bold"
                         android:textColor="@color/colorPaleRed"
                         android:layout_marginLeft="5dp"
-                        android:textSize="13dp"/>
+                        android:textSize="13sp"
+                        android:layout_marginStart="5dp" />
 
                 </LinearLayout>
 
@@ -76,20 +81,22 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Qty : "
+                        android:text="@string/string_foodQuantityMarker"
                         android:textColor="@color/colorGrey"
                         android:layout_marginLeft="10dp"
-                        android:textSize="13dp"/>
+                        android:textSize="13sp"
+                        android:layout_marginStart="10dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/text_quantity_eachOrder"
-                        android:text="QUANTITY"
+                        android:text="@string/string_foodQuantity"
                         android:textStyle="bold"
                         android:textColor="@color/colorGrey"
                         android:layout_marginLeft="5dp"
-                        android:textSize="13dp"/>
+                        android:textSize="13sp"
+                        android:layout_marginStart="5dp" />
 
                 </LinearLayout>
 
@@ -101,19 +108,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Order ID : "
+                        android:text="@string/string_orderIDMarker"
                         android:textColor="@color/colorBrown"
                         android:layout_marginLeft="10dp"
-                        android:textSize="10dp"/>
+                        android:textSize="10sp"
+                        android:layout_marginStart="10dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/text_orderID_eachOrder"
-                        android:text="ORDERID"
+                        android:text="@string/string_orderID"
                         android:textColor="@color/colorBrown"
                         android:layout_marginLeft="10dp"
-                        android:textSize="13dp" />
+                        android:textSize="13sp"
+                        android:layout_marginStart="10dp" />
 
                 </LinearLayout>
 

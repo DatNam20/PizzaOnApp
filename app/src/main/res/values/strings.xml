@@ -6,9 +6,11 @@
     <string name="string_foodPrice">PRICE</string>
     <string name="string_rupeeSymbol">₹</string>
     <string name="string_foodQuantity">QUANTITY</string>
+    <string name="string_foodQuantityMarker">Qty : </string>
     <string name="string_defaultQuantity">1</string>
     <string name="string_foodDescription">DESCRIPTION</string>
-    <string name="string_orderID">OrderID</string>
+    <string name="string_orderID">ORDER ID</string>
+    <string name="string_orderIDMarker">OrderID : </string>
 
 
     <string name="string_nameHint">Name</string>
