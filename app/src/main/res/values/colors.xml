@@ -10,9 +10,10 @@
 
 
     <color name="colorMain">#52FDCB4E</color>
+    <color name="colorMainLight">#3CFBD472</color>
     <color name="colorMainDark">#D5FDCB4E</color>
     <color name="colorPaleRed">#A4F14747</color>
-    <color name="colorLightRed">#F8A1A1</color>
+    <color name="colorLightRed">#7EF8A1A1</color>
     <color name="colorBrown">#D0432B07</color>
     <color name="colorHighlightGreen">#0FDA19</color>
     <color name="colorLightTurquoise">#429C9A</color>
@@ -20,6 +21,7 @@
     <color name="colorTranslucentGrey">#2FAEADAB</color>
     <color name="colorTranslucentMain">#2FEFD48F</color>
     <color name="colorGrey">#E4AEADAB</color>
+    <color name="colorTranslucentBlue">#41A56BF6</color>
 
 
 </resources>

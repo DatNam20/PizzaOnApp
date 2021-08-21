@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:gravity="center"
-                android:background="@color/colorTranslucentGrey"
+                android:background="@color/colorTranslucentBlue"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -56,8 +56,10 @@
                     android:layout_height="match_parent"
                     android:id="@+id/text_quantity_selectedItemDetail"
                     android:text="@string/string_defaultQuantity"
-                    android:textSize="25sp"
+                    android:layout_marginTop="3sp"
+                    android:layout_gravity="center_vertical"
                     android:textColor="@color/colorBrown"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -77,8 +79,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:orientation="vertical">
 
         <TextView
@@ -98,27 +100,26 @@
             android:id="@+id/text_userName_selectedItemDetail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@color/colorMain"
+            android:background="@drawable/button_order_layout"
+            app:backgroundTint="@color/colorMainLight"
             android:ems="10"
             android:hint="@string/string_nameHint"
-            android:paddingLeft="15sp"
+            android:paddingLeft="20sp"
             android:textColorHint="@color/colorGrey" />
 
         <EditText
+            android:id="@+id/text_userPhoneNumber_selectedItemDetail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/editTextPhone2"
             android:layout_marginTop="10dp"
-            android:background="@color/colorMain"
+            android:background="@drawable/button_order_layout"
+            app:backgroundTint="@color/colorMainLight"
             android:ems="10"
             android:hint="@string/string_numberHint"
             android:inputType="phone"
-            android:paddingLeft="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            android:paddingLeft="20sp"
+            android:textColorHint="@color/colorGrey" />
 
         <TextView
             android:layout_width="match_parent"
@@ -147,7 +148,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_price_selectedItemDescription"
+                android:id="@+id/text_price_selectedItemDetail"
                 android:text="@string/string_foodPrice"
                 android:textColor="@color/colorHighlightGreen"
                 android:layout_marginLeft="5dp"
@@ -157,14 +158,15 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/button_order_selectedItem"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:id="@+id/button_order_selectedItem"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="25dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_order_layout"
+            app:backgroundTint="@color/colorMainDark"
             android:text="@string/string_orderSelected"
             android:textStyle="bold" />
 

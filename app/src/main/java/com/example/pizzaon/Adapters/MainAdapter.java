@@ -1,6 +1,7 @@
 package com.example.pizzaon.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pizzaon.ItemDetailActivity;
 import com.example.pizzaon.Models.MainModel;
 import com.example.pizzaon.R;
 
@@ -44,6 +46,18 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.itemViewHolder
         holder.textItemPrice.setText(mainModel.getEachItemPrice());
         holder.textItemDescription.setText(mainModel.getEachItemDescription());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mainContext, ItemDetailActivity.class);
+                intent.putExtra("image", mainModel.getEachItemImage());
+                intent.putExtra("name", mainModel.getEachItemName());
+                intent.putExtra("description", mainModel.getEachItemDescription());
+                intent.putExtra("price", mainModel.getEachItemPrice());
+                mainContext.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
