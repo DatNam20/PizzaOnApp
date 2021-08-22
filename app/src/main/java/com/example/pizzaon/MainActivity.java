@@ -1,9 +1,13 @@
 package com.example.pizzaon;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.pizzaon.Adapters.MainAdapter;
 import com.example.pizzaon.Models.MainModel;
@@ -53,6 +57,23 @@ public class MainActivity extends AppCompatActivity {
 
         mainBinding.recyclerViewMain.setAdapter(mainAdapter);
         mainBinding.recyclerViewMain.setLayoutManager(linearLayoutManager);
-
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.item_myOrder_menu:
+                startActivity(new Intent(MainActivity.this, UsersOrderActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
