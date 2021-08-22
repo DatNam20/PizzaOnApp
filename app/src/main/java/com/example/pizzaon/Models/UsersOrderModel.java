@@ -6,6 +6,10 @@ public class UsersOrderModel {
     String eachOrderName, eachOrderPrice, eachOrderQuantity, eachOrderID;
 
 
+    public UsersOrderModel() {
+    }
+
+
     public UsersOrderModel(int eachOrderImage, String eachOrderName, String eachOrderPrice, String eachOrderQuantity, String eachOrderID) {
         this.eachOrderImage = eachOrderImage;
         this.eachOrderName = eachOrderName;

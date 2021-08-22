@@ -26,18 +26,8 @@ public class UsersOrderActivity extends AppCompatActivity {
         usersOrderBinding = ActivityUsersOrderBinding.inflate(getLayoutInflater());
         setContentView(usersOrderBinding.getRoot());
 
-
-        orderList = new ArrayList<>();
-
-        orderList.add(new UsersOrderModel(R.drawable.cheese_corn_pizza, "Cheese & Corn Pizza", "180",
-                "2", "21133"));
-        orderList.add(new UsersOrderModel(R.drawable.margherita_pizza, "Margherita Pizza", "100",
-                "1", "21541"));
-        orderList.add(new UsersOrderModel(R.drawable.paneer_makhani_pizza, "Paneer Makhani Pizza", "225",
-                "5", "21774"));
-        orderList.add(new UsersOrderModel(R.drawable.zucchini_pizza, "Zucchini Pizza", "320",
-                "2", "21926"));
-
+        SQLiteDBHelper sqLiteDBHelper = new SQLiteDBHelper(this);
+        orderList = sqLiteDBHelper.getSelectedOrdersList();
 
         UsersOrderAdapter usersOrderAdapter = new UsersOrderAdapter(orderList, this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

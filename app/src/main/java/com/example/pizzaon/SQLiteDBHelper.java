@@ -2,10 +2,15 @@ package com.example.pizzaon;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.example.pizzaon.Models.UsersOrderModel;
+
+import java.util.ArrayList;
 
 
 public class SQLiteDBHelper extends SQLiteOpenHelper {
@@ -13,6 +18,8 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
     final static String DATABASE_NAME = "PizzaOnDataBase.db" ;
     final static int DATABASE_VERSION = 1 ;
 
+    SQLiteDatabase sqLiteDatabase;
+    ArrayList<UsersOrderModel> selectedOrdersList;
 
     public SQLiteDBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -41,8 +48,9 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean insertOrder(String userName, String mobileNumber, String itemName, int itemPrice, int itemQuantity, String itemDescription, int itemImage) {
-        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+    public boolean insertOrder(String userName, String mobileNumber, String itemName, int itemPrice, int itemQuantity,
+                                        String itemDescription, int itemImage) {
+        sqLiteDatabase = getReadableDatabase();
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("userName", userName);
@@ -57,4 +65,28 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
         return id > 0;
     }
 
+
+    public ArrayList<UsersOrderModel> getSelectedOrdersList() {
+        selectedOrdersList = new ArrayList<>();
+        sqLiteDatabase = getWritableDatabase();
+
+        Cursor queryCursor = sqLiteDatabase.rawQuery("SELECT id, itemName, itemPrice, itemQuantity, itemImage FROM usersOrder", null);
+        if (queryCursor.moveToFirst()) {
+            while(queryCursor.moveToNext()) {
+                UsersOrderModel usersOrderModel = new UsersOrderModel();
+
+                usersOrderModel.setEachOrderID(queryCursor.getInt(0)+"");
+                usersOrderModel.setEachOrderName(queryCursor.getString(1));
+                usersOrderModel.setEachOrderPrice(queryCursor.getString(2));
+                usersOrderModel.setEachOrderQuantity(queryCursor.getString(3));
+                usersOrderModel.setEachOrderImage(queryCursor.getInt(4));
+
+                selectedOrdersList.add(usersOrderModel);
+            }
+        }
+        queryCursor.close();
+        sqLiteDatabase.close();
+
+        return selectedOrdersList;
+    }
 }
