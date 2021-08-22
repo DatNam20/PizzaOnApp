@@ -109,7 +109,7 @@
             android:textColorHint="@color/colorGrey" />
 
         <EditText
-            android:id="@+id/text_userPhoneNumber_selectedItemDetail"
+            android:id="@+id/text_userMobileNumber_selectedItemDetail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
