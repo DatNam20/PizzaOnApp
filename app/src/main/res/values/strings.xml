@@ -15,7 +15,8 @@
 
     <string name="string_nameHint">Name</string>
     <string name="string_numberHint">Mobile Number</string>
-    <string name="string_orderSelected">Order Now</string>
+    <string name="string_orderSelected">Add To My Order</string>
+    <string name="string_updateSelected">Update Order</string>
 
 
     <string name="string_menuItemTitle">My Order</string>

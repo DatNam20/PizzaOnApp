@@ -19,6 +19,7 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
     final static int DATABASE_VERSION = 1 ;
 
     SQLiteDatabase sqLiteDatabase;
+    Cursor queryCursor;
     ArrayList<UsersOrderModel> selectedOrdersList;
 
     public SQLiteDBHelper(@Nullable Context context) {
@@ -70,7 +71,7 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
         selectedOrdersList = new ArrayList<>();
         sqLiteDatabase = getWritableDatabase();
 
-        Cursor queryCursor = sqLiteDatabase.rawQuery("SELECT id, itemName, itemPrice, itemQuantity, itemImage FROM usersOrder", null);
+        queryCursor = sqLiteDatabase.rawQuery("SELECT id, itemName, itemPrice, itemQuantity, itemImage FROM usersOrder", null);
         if (queryCursor.moveToFirst()) {
             while(queryCursor.moveToNext()) {
                 UsersOrderModel usersOrderModel = new UsersOrderModel();
@@ -89,4 +90,33 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
 
         return selectedOrdersList;
     }
+
+
+    public Cursor getOrderByID(String orderID) {
+        sqLiteDatabase = getWritableDatabase();
+        queryCursor = sqLiteDatabase.rawQuery("SELECT * FROM usersOrder where id = "+orderID, null);
+
+        if (queryCursor != null)
+            queryCursor.moveToFirst();
+
+        return queryCursor;
+    }
+
+    public boolean updateOrder(String userName, String mobileNumber, String itemName, int itemPrice, int itemQuantity,
+                               String itemDescription, int itemImage, String orderID) {
+        sqLiteDatabase = getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("userName", userName);
+        contentValues.put("mobileNumber", mobileNumber);
+        contentValues.put("itemName", itemName);
+        contentValues.put("itemPrice", itemPrice);
+        contentValues.put("itemQuantity", itemQuantity);
+        contentValues.put("itemDescription", itemDescription);
+        contentValues.put("itemImage", itemImage);
+
+        long row = sqLiteDatabase.update("usersOrder", contentValues, "id = "+orderID, null);
+        return row > 0;
+    }
+
 }

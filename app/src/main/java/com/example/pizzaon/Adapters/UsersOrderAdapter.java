@@ -1,6 +1,7 @@
 package com.example.pizzaon.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pizzaon.ItemDetailActivity;
 import com.example.pizzaon.Models.UsersOrderModel;
 import com.example.pizzaon.R;
 
@@ -45,6 +47,15 @@ public class UsersOrderAdapter extends RecyclerView.Adapter<UsersOrderAdapter.or
         holder.textOrderQuantity.setText(usersOrderModel.getEachOrderQuantity());
         holder.textOrderID.setText(usersOrderModel.getEachOrderID());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(orderContext, ItemDetailActivity.class);
+                intent.putExtra("id", usersOrderModel.getEachOrderID());
+                intent.putExtra("callType", "update");
+                orderContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
