@@ -102,6 +102,7 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
         return queryCursor;
     }
 
+
     public boolean updateOrder(String userName, String mobileNumber, String itemName, int itemPrice, int itemQuantity,
                                String itemDescription, int itemImage, String orderID) {
         sqLiteDatabase = getReadableDatabase();
@@ -117,6 +118,12 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
 
         long row = sqLiteDatabase.update("usersOrder", contentValues, "id = "+orderID, null);
         return row > 0;
+    }
+
+
+    public int deleteOrder(String orderID) {
+        sqLiteDatabase = getWritableDatabase();
+        return sqLiteDatabase.delete("usersOrder", "id = "+orderID, null);
     }
 
 }

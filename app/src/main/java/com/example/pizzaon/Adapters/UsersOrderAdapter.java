@@ -1,12 +1,15 @@
 package com.example.pizzaon.Adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pizzaon.ItemDetailActivity;
 import com.example.pizzaon.Models.UsersOrderModel;
 import com.example.pizzaon.R;
+import com.example.pizzaon.SQLiteDBHelper;
 
 import java.util.ArrayList;
 
@@ -22,6 +26,7 @@ public class UsersOrderAdapter extends RecyclerView.Adapter<UsersOrderAdapter.or
 
     ArrayList<UsersOrderModel> orderList;
     Context orderContext;
+    SQLiteDBHelper sqLiteDBHelper;
 
 
     public UsersOrderAdapter(ArrayList<UsersOrderModel> orderList, Context orderContext) {
@@ -36,6 +41,7 @@ public class UsersOrderAdapter extends RecyclerView.Adapter<UsersOrderAdapter.or
         View orderView = LayoutInflater.from(orderContext).inflate(R.layout.order_each_layout, parent, false);
         return new UsersOrderAdapter.orderViewHolder(orderView);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull UsersOrderAdapter.orderViewHolder holder, int position) {
@@ -56,12 +62,43 @@ public class UsersOrderAdapter extends RecyclerView.Adapter<UsersOrderAdapter.or
                 orderContext.startActivity(intent);
             }
         });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                new AlertDialog.Builder(orderContext)
+                        .setTitle("Delete Order")
+                        .setMessage("\nAre you sure ?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                sqLiteDBHelper = new SQLiteDBHelper(orderContext);
+                                if (sqLiteDBHelper.deleteOrder(usersOrderModel.getEachOrderID()) > 0)
+                                    Toast.makeText(orderContext, "Successfully Deleted", Toast.LENGTH_SHORT).show();
+                                else
+                                    Toast.makeText(orderContext, "Failed !", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .setIcon(R.drawable.icon_delete)
+                        .show();
+
+                return false;
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
         return orderList.size();
     }
+
 
     public class orderViewHolder extends RecyclerView.ViewHolder {
 
@@ -81,3 +118,12 @@ public class UsersOrderAdapter extends RecyclerView.Adapter<UsersOrderAdapter.or
     }
 
 }
+
+/*
+        sqLiteDBHelper = new SQLiteDBHelper(orderContext);
+        if (sqLiteDBHelper.deleteOrder(usersOrderModel.getEachOrderID()) > 0)
+                Toast.makeText(orderContext, "Successfully Deleted", Toast.LENGTH_SHORT).show();
+        else
+                Toast.makeText(orderContext, "Failed !", Toast.LENGTH_SHORT).show();
+
+ */
